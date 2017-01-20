@@ -15,4 +15,11 @@
         <property name="message1" value="Hello India!"/>
         <property name="message3" value="Namaste India!"/>
     </bean>
+
+    <bean id="textEditor" class="com.testioc.TextEditor">
+        <constructor-arg ref="spellChecker" />
+    </bean>
+    <bean id="spellChecker" class="com.testioc.SpellChecker">
+    </bean>
+
 </beans>

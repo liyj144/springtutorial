@@ -37,6 +37,8 @@ public class MainApp {
         objb.getMessage2();
         objb.getMessage3();
 
+        TextEditor te = (TextEditor) context.getBean("textEditor");
+        te.spellCheck();
 
         context.registerShutdownHook();
     }
