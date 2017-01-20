@@ -6,6 +6,13 @@
     <!--<bean id="helloWorld" class="com.testioc.HelloWorld" scope="prototype" init-method="init" destroy-method="destory">-->
     <bean id="helloWorld" class="com.testioc.HelloWorld" init-method="init" destroy-method="destory">
         <property name="message" value="Hello World!" />
+        <property name="message1" value="Hello World!"/>
+        <property name="message2" value="Hello Second World!"/>
     </bean>
     <bean class="com.testioc.InitHelloWorld" />
+
+    <bean id="helloIndia" class="com.testioc.HelloIndia" parent="helloWorld">
+        <property name="message1" value="Hello India!"/>
+        <property name="message3" value="Namaste India!"/>
+    </bean>
 </beans>

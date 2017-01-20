@@ -3,15 +3,18 @@ package com.testioc;
 /**
  * Created by liyanjie on 2017/1/20.
  */
-public class HelloWorld {
+public class HelloIndia {
     private String message;
     private String message1;
     private String message2;
-    public void setMessage(String message){
-        this.message = message;
+    private String message3;
+
+    public String getMessage() {
+        return message;
     }
-    public void getMessage() {
-        System.out.println("Your Message is " + message);
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getMessage1() {
@@ -30,11 +33,19 @@ public class HelloWorld {
         this.message2 = message2;
     }
 
+    public String getMessage3() {
+        return message3;
+    }
+
+    public void setMessage3(String message3) {
+        this.message3 = message3;
+    }
+
     public void init() {
-        System.out.println("init ...");
+        System.out.println("init india class ...");
     }
 
     public void destory(){
-        System.out.println("destory ...");
+        System.out.println("destory india class ...");
     }
 }

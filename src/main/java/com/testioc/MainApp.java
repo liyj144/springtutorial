@@ -25,10 +25,19 @@ public class MainApp {
         obja.setMessage("I'm object A");
         obja.getMessage();
         System.out.println("obja : " + obja.hashCode());
+
+        obja.getMessage1();
+        obja.getMessage2();
+
         // test scope
-        HelloWorld objb = (HelloWorld) context.getBean("helloWorld");
-        objb.getMessage();
+        HelloIndia objb = (HelloIndia) context.getBean("helloIndia");
         System.out.println("objb : " + objb.hashCode());
+
+        objb.getMessage1();
+        objb.getMessage2();
+        objb.getMessage3();
+
+
         context.registerShutdownHook();
     }
 }
