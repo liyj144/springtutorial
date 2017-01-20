@@ -20,7 +20,7 @@ public class MainApp {
         */
         // example2
         //ApplicationContext context = new FileSystemXmlApplicationContext("classpath:Beans.xml");
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("classpath:Beans.xml");
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         HelloWorld obja = (HelloWorld) context.getBean("helloWorld");
         obja.setMessage("I'm object A");
         obja.getMessage();

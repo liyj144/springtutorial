@@ -7,4 +7,5 @@
     <bean id="helloWorld" class="com.testioc.HelloWorld" init-method="init" destroy-method="destory">
         <property name="message" value="Hello World!" />
     </bean>
+    <bean class="com.testioc.InitHelloWorld" />
 </beans>
