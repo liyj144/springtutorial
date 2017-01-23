@@ -1,7 +1,11 @@
-package com.testioc;
+package com.main;
 
 //import org.springframework.beans.factory.xml.XmlBeanFactory;
 //import org.springframework.core.io.ClassPathResource;
+import com.testioc.HelloIndia;
+import com.testioc.HelloWorld;
+import com.testioc.TextEditor;
+import com.testioc.TextEditor2;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -39,6 +43,9 @@ public class MainApp {
 
         TextEditor te = (TextEditor) context.getBean("textEditor");
         te.spellCheck();
+
+        TextEditor2 te2 = (TextEditor2) context.getBean("textEditor2");
+        te2.spellCheck();
 
         context.registerShutdownHook();
     }

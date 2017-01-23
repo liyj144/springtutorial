@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!--<bean id="helloWorld" class="com.testioc.HelloWorld" scope="singleton" init-method="init" destroy-method="destory">-->
     <!--<bean id="helloWorld" class="com.testioc.HelloWorld" scope="prototype" init-method="init" destroy-method="destory">-->
+
+    <context:annotation-config/>
+    <aop:aspectj-autoproxy />
+
+    <bean id="logging" class="com.common.aop.Logging" />
+
     <bean id="helloWorld" class="com.testioc.HelloWorld" init-method="init" destroy-method="destory">
         <property name="message" value="Hello World!" />
         <property name="message1" value="Hello World!"/>
@@ -16,10 +24,21 @@
         <property name="message3" value="Namaste India!"/>
     </bean>
 
+
+
     <bean id="textEditor" class="com.testioc.TextEditor">
         <constructor-arg ref="spellChecker" />
     </bean>
     <bean id="spellChecker" class="com.testioc.SpellChecker">
+    </bean>
+
+    <!--<bean id="textEditor2" class="com.testioc.TextEditor2">-->
+        <!--<property name="spellChecker" ref="spellChecker"/>-->
+    <!--</bean>-->
+    <!--<bean id="textEditor2" class="com.testioc.TextEditor2" autowire="byName">-->
+    <!--</bean>-->
+
+    <bean id="textEditor2" class="com.testioc.TextEditor2" autowire="byType">
     </bean>
 
 </beans>
